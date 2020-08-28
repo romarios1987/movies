@@ -1,28 +1,29 @@
 <template>
   <div>
     <h2 class="title">
-      <font-awesome-icon 
-        icon="film" 
-        size="1x" />&nbsp;
-       Фільми
-      </h2>
+      <font-awesome-icon icon="film" size="1x" />&nbsp; Фільми
+    </h2>
     <ItemList :results="results" type="movie" @item-clicked="viewDetailInfo" />
-    <ItemListMore :loading="loading" :loadMore="loadMore" @view-more="fetchData('MORE')"/>
+    <ItemListMore
+      :loading="loading"
+      :loadMore="loadMore"
+      @view-more="fetchData('MORE')"
+    />
   </div>
 </template>
 
 <script>
-import ItemList from "@/components/ItemList";
-import ItemListMore from "@/components/ItemListMore";
-import AppServices from "@/services/AppServices";
-import { viewDetailMixin } from "@/mixins/viewDetailMixin";
+import ItemList from '@/components/ItemList';
+import ItemListMore from '@/components/ItemListMore';
+import AppServices from '@/services/AppServices';
+import { viewDetailMixin } from '@/mixins/viewDetailMixin';
 
 export default {
   name: 'MoviesView',
   mixins: [viewDetailMixin],
   components: {
     ItemList,
-    ItemListMore
+    ItemListMore,
   },
   data() {
     return {
@@ -30,7 +31,7 @@ export default {
       loading: false,
       error: '',
       results: [],
-      totalPages: null
+      totalPages: null,
     };
   },
   computed: {
@@ -39,9 +40,9 @@ export default {
     },
     showMessage() {
       return this.searching || this.error != '' ? true : false;
-    }
+    },
   },
-  created(){
+  created() {
     this.fetchData('INIT');
   },
   methods: {
@@ -63,10 +64,9 @@ export default {
       } finally {
         this.loading = false;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

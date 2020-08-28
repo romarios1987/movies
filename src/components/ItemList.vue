@@ -1,27 +1,29 @@
 <template>
-  <div class="movies_list">
-    <ItemCard
+  <div>
+    <div class="movies_list">
+      <ItemCard
         v-for="(item, index) in results"
         :key="index"
         :item="item"
         :type="type"
-        v-on='$listeners'/>
+        v-on="$listeners"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import ItemCard from '@/components/ItemCard.vue'
-
+import ItemCard from '@/components/ItemCard.vue';
 export default {
   name: 'ItemList',
   components: {
-    ItemCard
+    ItemCard,
   },
   props: {
     results: Array,
-    type: String
-  }
-}
+    type: String,
+  },
+};
 </script>
 
 <style scoped lang="scss">

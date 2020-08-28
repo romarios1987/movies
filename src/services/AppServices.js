@@ -23,16 +23,16 @@ export default {
     const url = `${type}/top_rated?api_key=${key}&language=${language}&page=1`;
     return API.get(url);
   },
-  getMoviesUpcoming(page){
+  getMoviesUpcoming(page) {
     const url = `movie/upcoming?api_key=${key}&language=${language}&page=${page}`;
     return API.get(url);
   },
-  getMoviesLatest(page){
+  getMoviesLatest(page) {
     const url = `movie/latest?api_key=${key}&language=${language}&page=${page}`;
     return API.get(url);
   },
-  getTvShowsOnAir(page){
+  getTvShowsOnAir(page) {
     const url = `tv/on_the_air?api_key=${key}&language=${language}&page=${page}`;
-    return API.get(url);    
-  }
+    return API.get(url);
+  },
 };

@@ -3,15 +3,18 @@
     <ul>
       <li v-for="(link, index) in links" :key="index">
         <router-link :to="link.url">
-          <font-awesome-icon :icon="link.icon" :transform="link.transform" size="2x" class="icon" />
+          <font-awesome-icon
+            :icon="link.icon"
+            :transform="link.transform"
+            size="2x"
+            class="icon"
+          />
           <br />
           <span>{{ link.text }}</span>
         </router-link>
       </li>
-      <li>
-        <AppSearch />
-      </li>
     </ul>
+    <AppSearch />
   </div>
 </template>
 
@@ -26,25 +29,25 @@ export default {
       links: [
         {
           url: '/tops',
-          text: 'Топ',
+          text: 'ТОП',
           icon: 'star',
-          transform: 'shrink-7'
+          transform: 'shrink-7',
         },
         {
           url: '/movies',
-          text: 'Фільми',
+          text: 'ФІЛЬМИ',
           icon: 'film',
-          transform: 'shrink-6'
+          transform: 'shrink-6',
         },
         {
           url: '/tv-shows',
-          text: 'ТВ Передачі ',
+          text: 'ТВ ПЕРЕДАЧІ ',
           icon: 'tv',
-          transform: 'shrink-8'
-        }
-      ]
+          transform: 'shrink-8',
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 
@@ -63,7 +66,7 @@ li {
   display: inline-block;
   box-sizing: border-box;
 
-  &:last-child{
+  &:last-child {
     flex-grow: 1;
     border-right: 1px solid $background-border;
   }
@@ -92,9 +95,9 @@ a {
 span {
   display: none;
 }
-.navigation{
+.navigation {
   margin: 0 auto;
-    max-width: 1000px;
+  max-width: 1000px;
 }
 .icon {
   margin-top: 15px;
@@ -102,7 +105,7 @@ span {
 
 @include sm {
   li {
-    width: 120px;
+    width: 100%;
   }
   span {
     display: inline;
